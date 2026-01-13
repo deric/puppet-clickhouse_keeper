@@ -11,6 +11,12 @@ class clickhouse_keeper::repo {
       }
 
       'Debian': {
+        # `*.asc` for ASCII armored keys
+        apt::keyring { 'clickhouse-keyring.asc':
+          dir    => '/usr/share/keyrings',
+          source => 'https://packages.clickhouse.com/rpm/lts/repodata/repomd.xml.key',
+        }
+
         apt::source { 'clickhouse':
           location => 'https://packages.clickhouse.com/deb',
           release  => 'stable',
