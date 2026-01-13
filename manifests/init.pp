@@ -179,9 +179,9 @@ class clickhouse_keeper (
 
   if $manage_package {
     stdlib::ensure_packages($packages, {
-      ensure          => $package_ensure,
-      install_options => $package_install_options,
-      require         => Class['Clickhouse_keeper::Repo'],
+        ensure          => $package_ensure,
+        install_options => $package_install_options,
+        require         => Class['Clickhouse_keeper::Repo'],
     })
   }
 
