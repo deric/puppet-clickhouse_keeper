@@ -13,12 +13,9 @@ class clickhouse_keeper::repo {
       'Debian': {
         apt::source { 'clickhouse':
           location => 'https://packages.clickhouse.com/deb',
-          release  => 'stable main',
-          repos    => '',
-          key      => {
-            id     => '3A9EA1193A97B548BE1457D48919F6BD2B48D754',
-            server => 'hkp://keyserver.ubuntu.com:80',
-          },
+          release  => 'stable',
+          repos    => 'main',
+          keyring  => '/usr/share/keyrings/clickhouse-keyring.asc',
         }
       }
       'RedHat': {
