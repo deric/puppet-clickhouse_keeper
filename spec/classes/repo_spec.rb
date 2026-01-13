@@ -19,8 +19,8 @@ describe 'clickhouse_keeper::repo' do
           is_expected.to contain_apt__source('clickhouse').with(
             name: 'clickhouse',
             location: 'https://packages.clickhouse.com/deb',
-            release: 'stable main',
-            repos: '',
+            release: 'stable',
+            repos: 'main',
           )
         }
       when 'RedHat'
