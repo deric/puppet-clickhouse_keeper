@@ -18,9 +18,9 @@ define clickhouse_keeper::raft (
     @@concat::fragment { $title:
       target  => $target,
       content => epp("${module_name}/raft.xml.epp", {
-          'id'      => $id,
-          'address' => $address,
-          'port'    => $port
+        'id'      => $id,
+        'address' => $address,
+        'port'    => $port
       }),
       order   => 50,
       tag     => "clickhouse_keeper::config-${cluster}",
@@ -29,9 +29,9 @@ define clickhouse_keeper::raft (
     concat::fragment { $title:
       target  => $target,
       content => epp("${module_name}/raft.xml.epp", {
-          'id'      => $id,
-          'address' => $address,
-          'port'    => $port
+        'id'      => $id,
+        'address' => $address,
+        'port'    => $port
       }),
       order   => 50,
       tag     => "clickhouse_keeper::config-${cluster}",
