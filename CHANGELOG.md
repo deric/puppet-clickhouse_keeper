@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 
 
+## Release 1.1.0 (2026-01-13)
+
+  - Support puppetlabs/apt 11.x
+  - Drop puppet 7 support
+  - Drop old operating systems
+  - Update to apt keyrings
+
+  [Full changelog](https://github.com/deric/puppet-clickhouse_keeper/compare/v1.0.0...v1.1.0)
+
 ## Release 1.0.0 (2024-06-21)
 
   - Puppet 8 compatible
