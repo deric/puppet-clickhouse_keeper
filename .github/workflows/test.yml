@@ -10,11 +10,11 @@ jobs:
       BUNDLE_WITHOUT: release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install Ruby ${{ matrix.ruby }}
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.1"
+          ruby-version: "3.2"
           bundler-cache: true
       - name: Run Rubocop
         run: bundle exec rake rubocop
@@ -23,11 +23,11 @@ jobs:
       BUNDLE_WITHOUT: release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install Ruby ${{ matrix.ruby }}
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.1"
+          ruby-version: "3.2"
           bundler-cache: true
       - name: Puppet Lint
         run: bundle exec rake lint
@@ -37,8 +37,8 @@ jobs:
       fail-fast: false
       matrix:
         ruby:
-          - "3.1"
           - "3.2"
+          - "3.3"
         puppet:
           - "~> 8.0"
 
@@ -46,7 +46,7 @@ jobs:
     env:
       PUPPET_VERSION: ${{ matrix.puppet }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install Ruby ${{ matrix.ruby }}
         uses: ruby/setup-ruby@v1
         with:
@@ -62,15 +62,15 @@ jobs:
       fail-fast: false
       matrix:
         beaker:
-          - debian11-64a
           - debian12-64a
+          - debian13-64a
     name: Acceptance / Image ${{ matrix.beaker }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.0"
+          ruby-version: "3.2"
           bundler-cache: true
       - name: Run acceptance
         run: bundle exec rake beaker
