@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 
 
+## Release 2.0.0 (2026-11-26)
+
+  - Add `apt_pin`, `pin_priority` and `pin_packages` parameters for pinning package versions (Debian)
+  - Allow puppetlabs/stdlib 10.x and puppetlabs/concat 10.x
+  - Require puppetlabs/apt >= 9.2.0 (first release with `apt::keyring`, used since 1.1.0)
+  - Run acceptance tests on Debian 13
+  - Require puppet >= 8.0.0 (puppet 7 support was dropped in 1.1.0)
+  - Update to pdk 3.5.1
+
+  [Full changelog](https://github.com/deric/puppet-clickhouse_keeper/compare/v1.1.0...v2.0.0)
+
 ## Release 1.1.0 (2026-01-13)
 
   - Support puppetlabs/apt 11.x
