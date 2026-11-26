@@ -8,6 +8,12 @@
 # @param manage_config
 # @param manage_repo
 #    Whether APT/RPM repository should be managed by Puppet
+# @param apt_pin
+#    Version to pin `pin_packages` to (Debian only, requires `manage_repo`)
+# @param pin_priority
+#    APT pin priority
+# @param pin_packages
+#    Packages the pin applies to
 # @param manage_package
 # @param manage_user
 # @param manage_service
@@ -67,6 +73,9 @@ class clickhouse_keeper (
   Boolean $enable_ipv6 = true,
   Boolean $manage_config = true,
   Boolean $manage_repo = true,
+  Optional[String[1]] $apt_pin = undef,
+  Integer $pin_priority = 1001,
+  Array[String[1]] $pin_packages = ['clickhouse-keeper', 'clickhouse-common-static'],
   Boolean $manage_user = true,
   Boolean $manage_package = true,
   Boolean $manage_service = true,

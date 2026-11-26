@@ -23,6 +23,22 @@ describe 'clickhouse_keeper::repo' do
             repos: 'main',
           )
         }
+
+        it { is_expected.not_to contain_apt__pin('clickhouse-keeper') }
+
+        context 'with apt_pin' do
+          let :pre_condition do
+            "class { 'clickhouse_keeper': apt_pin => '25.11.7.41' }"
+          end
+
+          it {
+            is_expected.to contain_apt__pin('clickhouse-keeper').with(
+              packages: ['clickhouse-keeper', 'clickhouse-common-static'],
+              priority: 1001,
+              version: '25.11.7.41',
+            )
+          }
+        end
       when 'RedHat'
         it {
           is_expected.to contain_yumrepo('clickhouse').with(
