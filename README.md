@@ -2,7 +2,7 @@
 
 [![Puppet Forge](https://img.shields.io/puppetforge/v/deric/clickhouse_keeper.svg)](https://forge.puppet.com/modules/deric/clickhouse_keeper)
 
-A Puppet module to manage [ClickHouse Keeper](https://clickhouse.com/docs/en/guides/sre/keeper/clickhouse-keeper) installation. ClickHouse Keeper provides distributed key-value storage with API taht is compatible with [ZooKeeper](https://zookeeper.apache.org/).
+A Puppet module to manage [ClickHouse Keeper](https://clickhouse.com/docs/en/guides/sre/keeper/clickhouse-keeper) installation. ClickHouse Keeper provides distributed key-value storage with API that is compatible with [ZooKeeper](https://zookeeper.apache.org/).
 
 Unlike ZooKeeper ClickHouse Keeper is written in C++ and uses the RAFT algorithm implementation. This algorithm allows linearizability for reads and writes, and has several open-source implementations in different languages.
 
