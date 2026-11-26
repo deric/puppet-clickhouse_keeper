@@ -24,3 +24,13 @@ Gemfile:
   optional:
     ':system_tests':
       - gem: 'voxpupuli-acceptance'
+  overrides:
+    # voxpupuli-acceptance >= 4 (needed for beaker 7 / Debian 13 hosts) requires
+    # puppet-modulebuilder 2.x, which the template defaults of these gems pin below.
+    - gem: 'puppet-blacksmith'
+      version: ['>= 8.0', '< 10']
+    - gem: 'puppet_litmus'
+      version: '~> 2.0'
+      platforms:
+        - ruby
+        - x64_mingw
