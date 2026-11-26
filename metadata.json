@@ -72,6 +72,6 @@
     }
   ],
   "pdk-version": "3.4.0",
-  "template-url": "pdk-default#3.4.0.3",
-  "template-ref": "tags/3.4.0.3-0-g8fb22fc"
+  "template-url": "pdk-default#3.5.1",
+  "template-ref": "tags/3.5.1-0-g9d5b193"
 }
