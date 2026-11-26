@@ -23,6 +23,14 @@ class clickhouse_keeper::repo {
           repos    => 'main',
           keyring  => '/usr/share/keyrings/clickhouse-keyring.asc',
         }
+
+        if $clickhouse_keeper::apt_pin {
+          apt::pin { 'clickhouse-keeper':
+            packages => $clickhouse_keeper::pin_packages,
+            priority => $clickhouse_keeper::pin_priority,
+            version  => $clickhouse_keeper::apt_pin,
+          }
+        }
       }
       'RedHat': {
         yumrepo { 'clickhouse':
